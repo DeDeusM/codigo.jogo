@@ -1,0 +1,393 @@
+/*Tema Escuro*/
+:root{
+    --cor-fundo: #23262F;
+    --cor-fundo-header: linear-gradient(to bottom,#2C2F3A,#23262F);
+    --cor-fundo-nav: #191B21;
+    --cor-fundo-cartao: #2C2F3A;
+    --cor-fundo-integrante: #2C2F3A;
+    --cor-fundo-rodape: #16181D;
+    --cor-texto: #E8EAED;
+    --cor-texto-suave: #C4C8D0;
+    --cor-texto-integrante: #ffffff;
+    --cor-galeria-texto: #9BA0AB;
+    --cor-destaque: #B6FF2E;
+    --cor-borda: #B6FF2E;
+    --cor-borda-tabela: #3A3D47;
+}
+
+
+/*Tema Claro*/
+[data-theme="light"]{
+    --cor-fundo: #F8E7C9;
+    --cor-fundo-header: linear-gradient(to bottom,#F3DCAE,#F8E7C9);
+    --cor-fundo-nav: #FBF0DA;
+    --cor-fundo-cartao: #FCF3E2;
+    --cor-fundo-integrante: #FCF3E2;
+    --cor-fundo-rodape: #EFD9AE;
+    --cor-texto: #064E3B;
+    --cor-texto-suave: #0B6B52;
+    --cor-texto-integrante: #064E3B;
+    --cor-galeria-texto: #3F6657;
+    --cor-destaque: #064E3B;
+    --cor-borda: #064E3B;
+    --cor-borda-tabela: #E2CB9C;
+}
+
+
+/*Site Inteiro*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/*Cabecalho*/
+header{
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--cor-fundo-header);
+    border-bottom: 3px solid var(--cor-borda);
+    transition: 0.3s;
+}
+
+header h1{
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+}
+
+header p{
+    color: var(--cor-texto-suave);
+}
+
+
+/*Menu*/
+nav{
+    background-color: var(--cor-fundo-nav);
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+nav a{
+    color: var(--cor-texto);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: var(--cor-destaque);
+}
+
+
+/*Botao de Tema*/
+#botao-tema{
+    background: none;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-texto);
+    font-size: 1.1rem;
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+#botao-tema:hover{
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-cartao);
+}
+
+
+/*Historia*/
+#historia{
+    text-align: justify;
+}
+
+
+/*Secoes*/
+section{
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+section h2{
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-borda);
+    padding-left: 10px;
+}
+
+
+/*Areas de Destaque*/
+.destaque{
+    text-align: center;
+}
+
+.destaque p{
+    max-width: 700px;
+    margin: auto;
+}
+
+.dino{
+    width: 250px;
+    height: 250px;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*Gameplay*/
+   #gameplay video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+
+/*Cartoes*/
+.cartao{
+    background-color: var(--cor-fundo-cartao);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 6px solid var(--cor-borda);
+    border-radius: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.cartao:hover{
+    transform: translateY(-4px);
+}
+
+.cartao h3{
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+}
+
+
+/*Detalhes*/
+.cartao-detalhes{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    margin-top: 0;
+}
+
+.cartao-detalhes img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.cartao-detalhes p{
+    color: var(--cor-texto-suave);
+    line-height: 1.5;
+}
+
+.cartao:hover .cartao-detalhes{
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+
+/*Listas*/
+ul{
+    padding-left: 20px;
+}
+
+li{
+    margin-bottom: 8px;
+}
+
+
+/*Tabela*/
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th{
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+th, td{
+    border: 1px solid var(--cor-borda-tabela);
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: var(--cor-fundo-cartao);
+}
+
+
+/*Galeria*/
+#galeria{
+    text-align: center;
+}
+
+.fasesimg{
+    width: 280px;
+    height: 180px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border: 2px solid var(--cor-borda);
+    background-color: var(--cor-fundo-cartao);
+    color: var(--cor-galeria-texto);
+    border-radius: 10px;
+}
+
+
+/*Creditos*/
+#creditos{
+    text-align: center;
+    padding: 50px;
+}
+
+.linha-superior,
+.linha-inferior{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.integrante{
+    width: 300px;
+    min-height: 380px;
+
+    background-color: var(--cor-fundo-integrante);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-decoration: none;
+    color: var(--cor-texto-integrante);
+
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.integrante:hover{
+    transform: translateY(-10px);
+}
+
+.integrante img{
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+
+    border: 4px solid var(--cor-texto-integrante);
+}
+
+.integrante h3{
+    margin: 10px 0;
+}
+
+.integrante p{
+    line-height: 1.5;
+}
+
+
+/*Rodape*/
+.fim{
+    background-color: var(--cor-fundo-rodape);
+    transition: 0.3s;
+}
+
+footer{
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 3px solid var(--cor-borda);
+}
+
+/* GALERIA */
+.story{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--cor-destaque);
+}
+
+
+/*Responsividade*/
+@media (max-width: 768px){
+ 
+    header h1{
+        font-size: 2rem;
+    }
+ 
+    .linha-superior,
+    .linha-inferior{
+        flex-wrap: wrap;
+    }
+ 
+    .integrante{
+        width: 90%;
+        max-width: 300px;
+    }
+ 
+    .fasesimg{
+        width: 90%;
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: 280 / 180;
+    }
+ 
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+ 
+    .dino{
+        width: 180px;
+        height: 180px;
+        margin: 40px auto;
+    }
+ 
+    .story{
+        font-size: 2rem;
+    }
+ 
+}

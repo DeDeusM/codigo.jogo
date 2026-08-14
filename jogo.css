@@ -1,0 +1,339 @@
+/* VARIÁVEIS - TEMA ESCURO (PADRÃO) */
+:root{
+    --cor-fundo: #0f172a;
+    --cor-fundo-header: linear-gradient(to bottom,#16213e,#0f172a);
+    --cor-fundo-nav: #111827;
+    --cor-fundo-cartao: #1e293b;
+    --cor-fundo-integrante: #1f1f1f;
+    --cor-fundo-rodape: rgb(4, 4, 31);
+    --cor-texto: #e2e8f0;
+    --cor-texto-suave: #cbd5e1;
+    --cor-texto-integrante: #ffffff;
+    --cor-galeria-texto: #94a3b8;
+    --cor-destaque: #22c55e;
+    --cor-borda: #22c55e;
+    --cor-borda-tabela: #334155;
+}
+
+/* VARIÁVEIS - TEMA CLARO */
+[data-theme="light"]{
+    --cor-fundo: #f1f5f9;
+    --cor-fundo-header: linear-gradient(to bottom,#e2e8f0,#f1f5f9);
+    --cor-fundo-nav: #ffffff;
+    --cor-fundo-cartao: #ffffff;
+    --cor-fundo-integrante: #ffffff;
+    --cor-fundo-rodape: #e2e8f0;
+    --cor-texto: #0f172a;
+    --cor-texto-suave: #334155;
+    --cor-texto-integrante: #0f172a;
+    --cor-galeria-texto: #475569;
+    --cor-destaque: #16a34a;
+    --cor-borda: #16a34a;
+    --cor-borda-tabela: #cbd5e1;
+}
+
+
+/* SITE INTEIRO */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* CABEÇALHO */
+header{
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--cor-fundo-header);
+    border-bottom: 3px solid var(--cor-borda);
+    transition: 0.3s;
+}
+
+header h1{
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+}
+
+header p{
+    color: var(--cor-texto-suave);
+}
+
+
+/* MENU */
+nav{
+    background-color: var(--cor-fundo-nav);
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+nav a{
+    color: var(--cor-texto);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: var(--cor-destaque);
+}
+
+/* BOTÃO DE TEMA */
+#botao-tema{
+    background: none;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-texto);
+    font-size: 1.1rem;
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+#botao-tema:hover{
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-cartao);
+}
+
+/* HISTÓRIA */
+#historia{
+    text-align: justify;
+}
+
+/* SEÇÕES */
+section{
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+section h2{
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-borda);
+    padding-left: 10px;
+}
+
+/* AREAS DE DESTAQUE */
+.destaque{
+    text-align: center;
+}
+
+.destaque p{
+    max-width: 700px;
+    margin: auto;
+}
+
+.dino{
+    width: 250px;
+    height: 250px;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    /* GAMEPLAY*/
+   #gameplay video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* CARTOES */
+.cartao{
+    background-color: var(--cor-fundo-cartao);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 6px solid var(--cor-borda);
+    border-radius: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.cartao:hover{
+    transform: translateY(-4px);
+}
+
+.cartao h3{
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+}
+
+/* DETALHES ESCONDIDOS */
+.cartao-detalhes{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    margin-top: 0;
+}
+
+.cartao-detalhes img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.cartao-detalhes p{
+    color: var(--cor-texto-suave);
+    line-height: 1.5;
+}
+
+.cartao:hover .cartao-detalhes{
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* LISTAS */
+ul{
+    padding-left: 20px;
+}
+
+li{
+    margin-bottom: 8px;
+}
+
+
+/* TABELA */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th{
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+th, td{
+    border: 1px solid var(--cor-borda-tabela);
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: var(--cor-fundo-cartao);
+}
+
+
+/* GALERIA */
+#galeria{
+    text-align: center;
+}
+
+.fasesimg{
+    width: 280px;
+    height: 180px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border: 2px solid var(--cor-borda);
+    background-color: var(--cor-fundo-cartao);
+    color: var(--cor-galeria-texto);
+    border-radius: 10px;
+}
+
+/* CREDITOS */
+#creditos{
+    text-align: center;
+    padding: 50px;
+}
+
+.linha-superior,
+.linha-inferior{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.integrante{
+    width: 300px;
+    min-height: 380px;
+
+    background-color: var(--cor-fundo-integrante);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-decoration: none;
+    color: var(--cor-texto-integrante);
+
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.integrante:hover{
+    transform: translateY(-10px);
+}
+
+.integrante img{
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+
+    border: 4px solid var(--cor-texto-integrante);
+}
+
+.integrante h3{
+    margin: 10px 0;
+}
+
+.integrante p{
+    line-height: 1.5;
+}
+
+/* RODAPÉ */
+.fim{
+    background-color: var(--cor-fundo-rodape);
+    transition: 0.3s;
+}
+
+footer{
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 3px solid var(--cor-borda);
+}
+
+/* GALERIA */
+.story{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--cor-destaque);
+}
