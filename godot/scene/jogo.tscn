@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bhp1edf3qi0ro"]
+
+[ext_resource type="PackedScene" uid="uid://r00n58im5ji4" path="res://entities/player.tscn" id="1_3npid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vi6b"]
+size = Vector2(245, 26.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3npid"]
+size = Vector2(46.25, 33.15625)
+
+[node name="Game" type="Node2D" unique_id=2034351259]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1353112172]
+position = Vector2(4, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1833140059]
+position = Vector2(-11, 181.00002)
+scale = Vector2(0.94495416, 0.92857)
+shape = SubResource("RectangleShape2D_0vi6b")
+debug_color = Color(0, 0, 0.7019608, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1213742192]
+position = Vector2(145, 170)
+shape = SubResource("RectangleShape2D_3npid")
+debug_color = Color(0, 0, 0.7019608, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=593491606]
+position = Vector2(207, 154)
+shape = SubResource("RectangleShape2D_3npid")
+debug_color = Color(0, 0, 0.7019608, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=387931245]
+position = Vector2(266, 123)
+shape = SubResource("RectangleShape2D_3npid")
+debug_color = Color(0, 0, 0.7019608, 0.41960785)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1358076892]
+position = Vector2(322, 96)
+shape = SubResource("RectangleShape2D_3npid")
+debug_color = Color(0, 0, 0.7019608, 0.41960785)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=245596939]
+position = Vector2(376, 74)
+shape = SubResource("RectangleShape2D_3npid")
+debug_color = Color(0, 0, 0.7019608, 0.41960785)
+
+[node name="Player" parent="." unique_id=789735820 instance=ExtResource("1_3npid")]
+position = Vector2(-8, -20)
