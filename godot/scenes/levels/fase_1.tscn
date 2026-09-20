@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://mbvcvn2bmlbm"]
+
+[ext_resource type="Texture2D" uid="uid://dnl0bae2c8by" path="res://assets/backgrounds/cenario-f1-2.jpg.jpeg" id="1_1ocf6"]
+[ext_resource type="PackedScene" uid="uid://bgv8x7wbua0kr" path="res://scenes/mechanisms/moving_platform.tscn" id="2_u1f2d"]
+[ext_resource type="Script" uid="uid://di1dmuprl3p7w" path="res://scripts/mechanisms/moving_platform.gd" id="3_n40sw"]
+[ext_resource type="Texture2D" uid="uid://dxio60bt7r45c" path="res://assets/sprites/colecao-de-sprite-01.png" id="4_ga7mg"]
+[ext_resource type="PackedScene" uid="uid://brrb63pn8vhm4" path="res://scenes/hazards/Labareda.tscn" id="5_ga7mg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(200.76929, 30.384644)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c2fn"]
+size = Vector2(110.5, 123.25)
+
+[node name="Fase1" type="Node2D" unique_id=1707874038]
+
+[node name="CenarioF12_jpg" type="Sprite2D" parent="." unique_id=292944472]
+texture = ExtResource("1_1ocf6")
+centered = false
+
+[node name="MovingPlatform" parent="." unique_id=997501100 instance=ExtResource("2_u1f2d")]
+position = Vector2(493, 449.00003)
+scale = Vector2(0.65, 0.65)
+distancia = 130.0
+
+[node name="MovingPlatform2" type="AnimatableBody2D" parent="." unique_id=1180565762]
+position = Vector2(672, 390.00003)
+scale = Vector2(0.65, 0.65)
+script = ExtResource("3_n40sw")
+distancia = 90.0
+velocidade = 2.2
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPlatform2" unique_id=146292248]
+position = Vector2(-10.769232, 18.461493)
+texture = ExtResource("4_ga7mg")
+region_enabled = true
+region_rect = Rect2(492, 574.1454, 252, 220.50415)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform2" unique_id=209839060]
+position = Vector2(-15.384617, -33.8462)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="MovingPlatform3" type="AnimatableBody2D" parent="." unique_id=613570162]
+position = Vector2(672, 390.00003)
+scale = Vector2(0.65, 0.65)
+script = ExtResource("3_n40sw")
+velocidade = 1.8
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPlatform3" unique_id=1625005684]
+position = Vector2(367.69235, 76.92304)
+texture = ExtResource("4_ga7mg")
+region_enabled = true
+region_rect = Rect2(745, 568, 262, 203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform3" unique_id=1892566157]
+position = Vector2(373.84622, 9.230723)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="InicioPlayer" type="Marker2D" parent="." unique_id=1807806599]
+
+[node name="Labareda" parent="." unique_id=1755425330 instance=ExtResource("5_ga7mg")]
+position = Vector2(362, 488)
+
+[node name="Labareda2" parent="." unique_id=1004334499 instance=ExtResource("5_ga7mg")]
+position = Vector2(778, 478)
+
+[node name="AreaSaida" type="Area2D" parent="." unique_id=616575690]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSaida" unique_id=2130990528]
+position = Vector2(1345.25, 393.625)
+shape = SubResource("RectangleShape2D_3c2fn")
