@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://brrb63pn8vhm4"]
+
+[ext_resource type="Texture2D" uid="uid://rcfdskmg1sf7" path="res://assets/sprites/fogo/labareda_sprite.png" id="1_8od32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y35h7"]
+atlas = ExtResource("1_8od32")
+region = Rect2(0, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5crh"]
+atlas = ExtResource("1_8od32")
+region = Rect2(271, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2fai"]
+atlas = ExtResource("1_8od32")
+region = Rect2(542, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swrpg"]
+atlas = ExtResource("1_8od32")
+region = Rect2(813, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjcum"]
+atlas = ExtResource("1_8od32")
+region = Rect2(1084, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8svp"]
+atlas = ExtResource("1_8od32")
+region = Rect2(1355, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jatr"]
+atlas = ExtResource("1_8od32")
+region = Rect2(1626, 0, 271, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo6s1"]
+atlas = ExtResource("1_8od32")
+region = Rect2(1897, 0, 271, 724)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3c2fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y35h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5crh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2fai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swrpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjcum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8svp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jatr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo6s1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u840f"]
+size = Vector2(60, 140)
+
+[node name="Labareda" type="Node2D" unique_id=1755425330]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=978946771]
+position = Vector2(9, -16.000002)
+scale = Vector2(0.36346874, 0.30801103)
+sprite_frames = SubResource("SpriteFrames_3c2fn")
+autoplay = "default"
+frame_progress = 0.4276382
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1125199187]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=295722732]
+position = Vector2(7, -30)
+shape = SubResource("RectangleShape2D_u840f")

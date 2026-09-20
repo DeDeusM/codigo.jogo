@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bgv8x7wbua0kr"]
+
+[ext_resource type="Script" uid="uid://di1dmuprl3p7w" path="res://scripts/mechanisms/moving_platform.gd" id="1_5qfqw"]
+[ext_resource type="Texture2D" uid="uid://dxio60bt7r45c" path="res://assets/sprites/colecao-de-sprite-01.png" id="1_rx7wg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(220, 30)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=997501100]
+script = ExtResource("1_5qfqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=146292248]
+texture = ExtResource("1_rx7wg")
+region_enabled = true
+region_rect = Rect2(214, 574.1454, 277, 220.50415)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209839060]
+position = Vector2(0, -55)
+shape = SubResource("RectangleShape2D_fdm2o")
