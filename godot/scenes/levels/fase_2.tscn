@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dk5maha2v57gu"]
+
+[ext_resource type="Texture2D" uid="uid://22jcnuw6c8fl" path="res://assets/backgrounds/cenario-f2.png" id="1_k7c1p"]
+[ext_resource type="PackedScene" uid="uid://oafj3yosq8gd" path="res://scenes/mechanisms/BlocoMeio1.tscn" id="2_t0jkm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7c1p"]
+size = Vector2(2032, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(365, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvvqh"]
+size = Vector2(725, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7wpd"]
+size = Vector2(130, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb0mf"]
+size = Vector2(195, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0jkm"]
+size = Vector2(900, 28)
+
+[node name="fase_2" type="Node2D" unique_id=111685781]
+
+[node name="CenarioF2_png" type="Sprite2D" parent="." unique_id=1456397814]
+texture = ExtResource("1_k7c1p")
+
+[node name="CenarioColisoes" type="StaticBody2D" parent="CenarioF2_png" unique_id=308086874]
+
+[node name="ColisaoChao" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=1676474512]
+position = Vector2(0, 368)
+shape = SubResource("RectangleShape2D_k7c1p")
+
+[node name="PlataformaMeioEsquerda" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=2027889078]
+position = Vector2(-470, 38)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="PlataformaMeioSuperiorEquerda" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=681287847]
+position = Vector2(-653, -221)
+shape = SubResource("RectangleShape2D_qvvqh")
+
+[node name="PlataformaMeioSuperiorDireitaA" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=1539692635]
+position = Vector2(272, -221)
+shape = SubResource("RectangleShape2D_c7wpd")
+
+[node name="PlataformaMeioSuperiorDireitaB" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=2076786257]
+position = Vector2(633, -221)
+shape = SubResource("RectangleShape2D_hb0mf")
+
+[node name="PlataformaMeioDireita" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=902572444]
+position = Vector2(566, 38)
+shape = SubResource("RectangleShape2D_t0jkm")
+
+[node name="BlocoQuebravel" parent="." unique_id=1931462044 instance=ExtResource("2_t0jkm")]
+position = Vector2(-240, 52)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoQuebravel2" parent="." unique_id=1640715156 instance=ExtResource("2_t0jkm")]
+position = Vector2(-142, 52)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoQuebravel3" parent="." unique_id=1490159359 instance=ExtResource("2_t0jkm")]
+position = Vector2(-43, 52)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoQuebravel4" parent="." unique_id=1373860261 instance=ExtResource("2_t0jkm")]
+position = Vector2(50, 52)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior1" parent="." unique_id=1456900768 instance=ExtResource("2_t0jkm")]
+position = Vector2(-183, -209)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior2" parent="." unique_id=146725694 instance=ExtResource("2_t0jkm")]
+position = Vector2(-89, -209)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior3" parent="." unique_id=1021876783 instance=ExtResource("2_t0jkm")]
+position = Vector2(5, -209)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior4" parent="." unique_id=838559686 instance=ExtResource("2_t0jkm")]
+position = Vector2(98.99999, -209)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoDireita1" parent="." unique_id=1727321480 instance=ExtResource("2_t0jkm")]
+position = Vector2(401.99997, -211)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoDireita2" parent="." unique_id=906573457 instance=ExtResource("2_t0jkm")]
+position = Vector2(474.99997, -210)
+scale = Vector2(1.21, 1.21)
