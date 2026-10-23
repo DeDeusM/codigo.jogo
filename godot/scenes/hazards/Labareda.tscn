@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brrb63pn8vhm4"]
 
 [ext_resource type="Texture2D" uid="uid://rcfdskmg1sf7" path="res://assets/sprites/fogo/labareda_sprite.png" id="1_8od32"]
+[ext_resource type="Script" uid="uid://uvamd1oirqf6" path="res://scripts/hazards/labareda.gd" id="1_y35h7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y35h7"]
 atlas = ExtResource("1_8od32")
@@ -70,6 +71,7 @@ animations = [{
 size = Vector2(60, 140)
 
 [node name="Labareda" type="Node2D" unique_id=1755425330]
+script = ExtResource("1_y35h7")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=978946771]
 position = Vector2(9, -16.000002)
@@ -81,5 +83,5 @@ frame_progress = 0.4276382
 [node name="Area2D" type="Area2D" parent="." unique_id=1125199187]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=295722732]
-position = Vector2(7, -30)
+position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_u840f")

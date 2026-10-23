@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://22jcnuw6c8fl" path="res://assets/backgrounds/cenario-f2.png" id="1_k7c1p"]
 [ext_resource type="PackedScene" uid="uid://oafj3yosq8gd" path="res://scenes/mechanisms/BlocoMeio1.tscn" id="2_t0jkm"]
+[ext_resource type="Script" uid="uid://mg87wmq3eoaj" path="res://scenes/levels/interface.gd" id="3_hb0mf"]
+[ext_resource type="PackedScene" uid="uid://cyio1mgdwsxmj" path="res://scenes/tela_pause.tscn" id="4_kiwfv"]
+[ext_resource type="Texture2D" uid="uid://djyyxv154t6a1" path="res://assets/ui/botão-pause.png" id="5_jn4nd"]
+[ext_resource type="PackedScene" uid="uid://dtl31kt8er1ju" path="res://scenes/enemies/pterodactilo.tscn" id="6_kiwfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7c1p"]
 size = Vector2(2032, 32)
@@ -21,9 +25,19 @@ size = Vector2(195, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0jkm"]
 size = Vector2(900, 28)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb0mf"]
+atlas = ExtResource("5_jn4nd")
+region = Rect2(86, 0, 920, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiwfv"]
+atlas = ExtResource("5_jn4nd")
+region = Rect2(1027, 0, 885, 786)
+
 [node name="fase_2" type="Node2D" unique_id=111685781]
 
 [node name="CenarioF2_png" type="Sprite2D" parent="." unique_id=1456397814]
+position = Vector2(913.25, 388)
+scale = Vector2(0.8988183, 1)
 texture = ExtResource("1_k7c1p")
 
 [node name="CenarioColisoes" type="StaticBody2D" parent="CenarioF2_png" unique_id=308086874]
@@ -53,41 +67,85 @@ position = Vector2(566, 38)
 shape = SubResource("RectangleShape2D_t0jkm")
 
 [node name="BlocoQuebravel" parent="." unique_id=1931462044 instance=ExtResource("2_t0jkm")]
-position = Vector2(-240, 52)
+position = Vector2(716, 442)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoQuebravel2" parent="." unique_id=1640715156 instance=ExtResource("2_t0jkm")]
-position = Vector2(-142, 52)
+position = Vector2(797, 442)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoQuebravel3" parent="." unique_id=1490159359 instance=ExtResource("2_t0jkm")]
-position = Vector2(-43, 52)
+position = Vector2(879, 441)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoQuebravel4" parent="." unique_id=1373860261 instance=ExtResource("2_t0jkm")]
-position = Vector2(50, 52)
+position = Vector2(957.99994, 441)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoSuperior1" parent="." unique_id=1456900768 instance=ExtResource("2_t0jkm")]
-position = Vector2(-183, -209)
+position = Vector2(740, 180)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoSuperior2" parent="." unique_id=146725694 instance=ExtResource("2_t0jkm")]
-position = Vector2(-89, -209)
+position = Vector2(831, 179.99998)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoSuperior3" parent="." unique_id=1021876783 instance=ExtResource("2_t0jkm")]
-position = Vector2(5, -209)
+position = Vector2(923, 180)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoSuperior4" parent="." unique_id=838559686 instance=ExtResource("2_t0jkm")]
-position = Vector2(98.99999, -209)
+position = Vector2(1012.99994, 179.99998)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoDireita1" parent="." unique_id=1727321480 instance=ExtResource("2_t0jkm")]
-position = Vector2(401.99997, -211)
+position = Vector2(1274, 179)
 scale = Vector2(1.21, 1.21)
 
 [node name="BlocoDireita2" parent="." unique_id=906573457 instance=ExtResource("2_t0jkm")]
-position = Vector2(474.99997, -210)
+position = Vector2(1339.9999, 179)
 scale = Vector2(1.21, 1.21)
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=722066312]
+script = ExtResource("3_hb0mf")
+
+[node name="TelaPause" parent="Interface" unique_id=1298864345 instance=ExtResource("4_kiwfv")]
+offset_left = 974.0
+offset_top = 145.0
+offset_right = 974.0
+offset_bottom = 145.0
+
+[node name="BotaoPause" type="TextureButton" parent="Interface" unique_id=15581535]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 84.0
+offset_bottom = 84.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_hb0mf")
+texture_pressed = SubResource("AtlasTexture_kiwfv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Pterodactilo" parent="." unique_id=1719083296 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 625)
+velocidade = 220.0
+
+[node name="Pterodactilo2" parent="." unique_id=941125692 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 625)
+velocidade = 220.0
+atraso_inicial = 3.0
+
+[node name="Pterodactilo5" parent="." unique_id=670146040 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 625)
+velocidade = 220.0
+atraso_inicial = 6.0
+
+[node name="Pterodactilo3" parent="." unique_id=1755094948 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 350)
+velocidade = 270.0
+atraso_inicial = 0.8
+
+[node name="Pterodactilo4" parent="." unique_id=533712753 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 350)
+velocidade = 270.0
+atraso_inicial = 4.8

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dtl31kt8er1ju"]
+
+[ext_resource type="Texture2D" uid="uid://dwevowtws2e4a" path="res://assets/sprites/inimigos/enemy-f3.png" id="1_our58"]
+[ext_resource type="Script" uid="uid://c75yq0e3nwshh" path="res://scenes/enemies/pterodactilo.gd" id="1_peva3"]
+[ext_resource type="Texture2D" uid="uid://db5yqexkjkr5d" path="res://assets/sprites/inimigos/enemy-f4 (2).png" id="2_peva3"]
+[ext_resource type="Texture2D" uid="uid://ige0db1l280b" path="res://assets/sprites/inimigos/enemy-f4.png" id="3_q6ky7"]
+[ext_resource type="Texture2D" uid="uid://c0pmnwgu5utp0" path="res://assets/sprites/inimigos/enemy-f5.png" id="4_dn2su"]
+[ext_resource type="Texture2D" uid="uid://daff5j5mmrnd7" path="res://assets/sprites/inimigos/enemy-f5 (2).png" id="5_dtswq"]
+[ext_resource type="Texture2D" uid="uid://clyagamjes8fd" path="res://assets/sprites/inimigos/enemy-f6.png" id="6_hi7ik"]
+[ext_resource type="Texture2D" uid="uid://wfkxbo5el44w" path="res://assets/sprites/inimigos/enemy-f7 (2).png" id="7_7icey"]
+[ext_resource type="Texture2D" uid="uid://bkh2lj3vxujms" path="res://assets/sprites/inimigos/enemy-f7.png" id="8_y7nsv"]
+[ext_resource type="Texture2D" uid="uid://bf0lggmvk0340" path="res://assets/sprites/inimigos/enemy-f8 (2).png" id="9_www6n"]
+[ext_resource type="Texture2D" uid="uid://c4fqrkfsea5c1" path="res://assets/sprites/inimigos/enemy-f8.png" id="10_qej41"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdm2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_our58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_peva3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q6ky7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dn2su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dtswq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hi7ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7icey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y7nsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_www6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qej41")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(77.875, 55)
+
+[node name="Pterodactilo" type="Area2D" unique_id=1719083296]
+script = ExtResource("1_peva3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=898348732]
+position = Vector2(5, 4.000001)
+scale = Vector2(0.6285714, 0.57142854)
+sprite_frames = SubResource("SpriteFrames_fdm2o")
+autoplay = "default"
+frame_progress = 0.62500256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1127533037]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_fdm2o")
