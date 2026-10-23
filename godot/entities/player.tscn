@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://fjiyxyyt3dmg" path="res://scripts/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://c3yq67ge1h6tk" path="res://sprites/dinux e cenarios/colecao-de-sprite-01.png" id="2_b0kkn"]
+[ext_resource type="Texture2D" uid="uid://b37u6d7d0p2hi" path="res://sprites/colecao-de-sprite-atualizada2.png" id="2_e4p34"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0vi6b"]
 radius = 50.0
 height = 140.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef06p"]
-atlas = ExtResource("2_b0kkn")
-region = Rect2(166, 232, 166, 232)
+atlas = ExtResource("2_e4p34")
+region = Rect2(190, 0, 180, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjdhl"]
+atlas = ExtResource("2_e4p34")
+region = Rect2(10, 0, 180, 219)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i623q"]
 atlas = ExtResource("2_b0kkn")
@@ -44,6 +49,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ef06p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjdhl")
 }],
 "loop": 1,
 "name": &"idle",
@@ -94,8 +102,9 @@ shape = SubResource("CapsuleShape2D_0vi6b")
 position = Vector2(59, 125)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_gcq2h")
-animation = &"jump"
+animation = &"idle"
 autoplay = "run"
+speed_scale = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055182485]
 position = Vector2(47, 75)
