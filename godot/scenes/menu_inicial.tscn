@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cjq8i11jqot1"]
+
+[ext_resource type="Texture2D" uid="uid://bl754n67daj6v" path="res://assets/ui/tela-inicial.png" id="1_40mju"]
+[ext_resource type="Script" uid="uid://ptk34h58iuyk" path="res://scenes/menu_inicial.gd" id="1_nn1uv"]
+[ext_resource type="Texture2D" uid="uid://dfk584uub37uc" path="res://assets/ui/botao-jogar.png" id="2_1lqws"]
+[ext_resource type="Texture2D" uid="uid://bcpe8amghkq81" path="res://assets/ui/botao-sair.png" id="3_eg8ak"]
+
+[node name="MenuInicial" type="Control" unique_id=1270557124]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nn1uv")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=1454281253]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_40mju")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BotaoJogar" type="TextureButton" parent="." unique_id=1765384580]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 286.0
+offset_right = 665.0
+offset_bottom = 386.0
+texture_normal = ExtResource("2_1lqws")
+
+[node name="BotaoSair" type="TextureButton" parent="." unique_id=980269512]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 381.0
+offset_right = 662.0
+offset_bottom = 481.0
+texture_normal = ExtResource("3_eg8ak")
