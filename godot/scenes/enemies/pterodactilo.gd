@@ -9,16 +9,18 @@ signal jogador_atingido
 
 var pode_voar: bool = false
 
-func _ready():
+
+func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 	$AnimatedSprite2D.play("default")
 	position.x = limite_esquerdo
 
-	await get_tree().create_timer(atraso_inicial).timeout
+	await get_tree().create_timer(atraso_inicial, false).timeout
 	pode_voar = true
 
-func _process(delta):
+
+func _process(delta: float) -> void:
 	if not pode_voar:
 		return
 
@@ -27,7 +29,8 @@ func _process(delta):
 	if position.x >= limite_direito:
 		position.x = limite_esquerdo
 
-func _on_body_entered(corpo):
-	if corpo is CharacterBody2D:
-		print("Jogador atingido pelo pterodáctilo")
+
+func _on_body_entered(corpo: Node2D) -> void:
+	if corpo.has_method("receber_dano"):
+		corpo.receber_dano()
 		jogador_atingido.emit()

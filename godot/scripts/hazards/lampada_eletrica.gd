@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var lanterna: AnimatedSprite2D = $Lanterna
 @onready var raio: Sprite2D = $Raio
+@onready var area_dano: Area2D = $AreaDano
 @onready var colisao: CollisionShape2D = $AreaDano/CollisionShape2D
 
 var tempo: float = 0.0
@@ -16,6 +17,9 @@ var ultimo_quadro: int = 0
 
 
 func _ready() -> void:
+	area_dano.collision_mask = 1
+	area_dano.monitoring = true
+
 	lanterna.stop()
 	lanterna.animation = "default"
 
@@ -67,8 +71,7 @@ func atualizar_transicao() -> void:
 		1.0
 	)
 
-	# Reserva o último quadro, totalmente laranja,
-	# para o momento em que o raio está ligado.
+	# O último quadro aparece apenas com o raio ligado.
 	lanterna.frame = mini(
 		int(progresso * ultimo_quadro),
 		maxi(ultimo_quadro - 1, 0)
@@ -84,3 +87,12 @@ func definir_ligada(valor: bool) -> void:
 		lanterna.frame = ultimo_quadro
 	else:
 		lanterna.frame = 0
+
+
+func _physics_process(_delta: float) -> void:
+	if not ligada:
+		return
+
+	for corpo in area_dano.get_overlapping_bodies():
+		if corpo.has_method("receber_dano"):
+			corpo.receber_dano()

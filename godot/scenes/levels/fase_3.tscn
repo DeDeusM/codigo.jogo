@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://mg87wmq3eoaj" path="res://scenes/levels/interface.gd" id="11_8ley3"]
 [ext_resource type="PackedScene" uid="uid://cyio1mgdwsxmj" path="res://scenes/tela_pause.tscn" id="12_1nf3m"]
 [ext_resource type="Texture2D" uid="uid://djyyxv154t6a1" path="res://assets/ui/botão-pause.png" id="13_juacc"]
+[ext_resource type="PackedScene" uid="uid://r00n58im5ji4" path="res://entities/player.tscn" id="14_1nf3m"]
+[ext_resource type="Texture2D" uid="uid://duk5ju5i2nv12" path="res://assets/ui/colecao-de-sprite-01 (2).png" id="14_juacc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
 size = Vector2(1366, 56)
@@ -113,10 +115,10 @@ animations = [{
 size = Vector2(34, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbai7"]
-size = Vector2(34, 47)
+size = Vector2(34, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osicj"]
-size = Vector2(711, 33)
+size = Vector2(711, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u840f"]
 size = Vector2(44, 48)
@@ -284,6 +286,10 @@ region = Rect2(86, 0, 920, 786)
 atlas = ExtResource("13_juacc")
 region = Rect2(1027, 0, 885, 786)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbdhc"]
+atlas = ExtResource("14_juacc")
+region = Rect2(60, 556, 112, 125)
+
 [node name="Fase3" type="Node2D" unique_id=1220790518]
 
 [node name="Cenario" type="Sprite2D" parent="." unique_id=116587574]
@@ -381,13 +387,13 @@ atraso_inicial = 0.5
 sempre_ligada = true
 
 [node name="Lanterna" type="AnimatedSprite2D" parent="LampadaPermanente" unique_id=49350635]
-position = Vector2(772, 608)
+position = Vector2(772, 620)
 scale = Vector2(0.1833333, 0.15972252)
 sprite_frames = SubResource("SpriteFrames_fdm2o")
 
 [node name="Raio" type="Sprite2D" parent="LampadaPermanente" unique_id=1410350591]
-position = Vector2(773, 659)
-scale = Vector2(0.26337442, 0.22327596)
+position = Vector2(773, 663.6875)
+scale = Vector2(0.26337442, 0.19094846)
 texture = ExtResource("3_xbai7")
 region_enabled = true
 region_rect = Rect2(1650, 711, 243, 290)
@@ -396,13 +402,13 @@ region_filter_clip_enabled = true
 [node name="AreaDano" type="Area2D" parent="LampadaPermanente" unique_id=252529058]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LampadaPermanente/AreaDano" unique_id=1848526702]
-position = Vector2(771, 654.5)
+position = Vector2(771, 659)
 shape = SubResource("RectangleShape2D_xbai7")
 
 [node name="ChaoMeio" type="StaticBody2D" parent="." unique_id=901324635]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoMeio" unique_id=1824283017]
-position = Vector2(611.5, 483.5)
+position = Vector2(611.5, 473)
 shape = SubResource("RectangleShape2D_osicj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ChaoMeio" unique_id=353355553]
@@ -523,10 +529,10 @@ shape = SubResource("RectangleShape2D_tjjhq")
 script = ExtResource("11_8ley3")
 
 [node name="TelaPause" parent="Interface" unique_id=1298864345 instance=ExtResource("12_1nf3m")]
-offset_left = 769.0
-offset_top = 864.0
-offset_right = 769.0
-offset_bottom = 864.0
+offset_left = 735.0
+offset_top = 144.0
+offset_right = 735.0
+offset_bottom = 144.0
 
 [node name="BotaoPause" type="TextureButton" parent="Interface" unique_id=1656622097]
 offset_left = 20.0
@@ -538,3 +544,47 @@ texture_normal = SubResource("AtlasTexture_guagh")
 texture_pressed = SubResource("AtlasTexture_3053c")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Vidas" type="HBoxContainer" parent="Interface" unique_id=551457912]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 18.0
+offset_right = -21.0
+offset_bottom = 58.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Coracao1" type="TextureRect" parent="Interface/Vidas" unique_id=1277707486]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cbdhc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coracao2" type="TextureRect" parent="Interface/Vidas" unique_id=1797179976]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cbdhc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coracao3" type="TextureRect" parent="Interface/Vidas" unique_id=1580431752]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cbdhc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Player" parent="." unique_id=789735820 instance=ExtResource("14_1nf3m")]
+position = Vector2(-266, -529)
+scale = Vector2(6, 6)
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1055182485]
+limit_right = 1367
+
+[editable path="Player"]

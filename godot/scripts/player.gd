@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 80.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -500.0
+
+var invulneravel: bool = false
 
 
 func _physics_process(delta: float) -> void:
+	if EstadoJogo.vidas <= 0:
+		return
+
 	# Gravidade
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -38,3 +43,23 @@ func _physics_process(delta: float) -> void:
 		anim.play("idle")
 
 	move_and_slide()
+
+
+func receber_dano() -> void:
+	if invulneravel or EstadoJogo.vidas <= 0:
+		return
+
+	invulneravel = true
+	EstadoJogo.perder_vida()
+
+	if EstadoJogo.vidas <= 0:
+		anim.stop()
+		return
+
+	# Fica transparente durante a proteção
+	anim.modulate.a = 0.5
+
+	await get_tree().create_timer(1.0, false).timeout
+
+	anim.modulate.a = 1.0
+	invulneravel = false
