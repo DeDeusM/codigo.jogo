@@ -93,7 +93,6 @@ animations = [{
 script = ExtResource("1_merdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=231303560]
-visible = false
 position = Vector2(60, 127)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("CapsuleShape2D_0vi6b")
@@ -107,7 +106,8 @@ autoplay = "run"
 speed_scale = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055182485]
-position = Vector2(47, 75)
+position = Vector2(59, 125)
 limit_left = 0
 limit_top = 0
-limit_bottom = 200
+limit_right = 1438
+limit_bottom = 736

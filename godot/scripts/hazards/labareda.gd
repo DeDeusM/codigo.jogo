@@ -3,39 +3,56 @@ extends Node2D
 @export var tempo_espera: float = 2.0
 @export var atraso_inicial: float = 0.0
 
+@onready var area_dano: Area2D = $Area2D
+@onready var visual: AnimatedSprite2D = $Sprite2D
+
+var ativa: bool = false
 var reiniciando: bool = false
 
-func _ready():
-	$Area2D.collision_layer = 2
-	$Area2D.collision_mask = 1
-	$Area2D.body_entered.connect(_quando_entrou_no_fogo)
+func _ready() -> void:
+	area_dano.collision_layer = 2
+	area_dano.collision_mask = 1
+	area_dano.monitoring = true
 
-	$Sprite2D.visible = false
-	$Area2D.monitoring = false
+	visual.visible = false
 
-	await get_tree().create_timer(atraso_inicial).timeout
+	await get_tree().create_timer(atraso_inicial, false).timeout
 	ciclo_labareda()
 
-func ciclo_labareda():
-	while true:
-		$Sprite2D.visible = true
-		$Area2D.monitoring = true
-		$Sprite2D.frame = 0
-		$Sprite2D.play("default")
 
-		await $Sprite2D.animation_finished
+func ciclo_labareda() -> void:
+	while is_inside_tree():
+		visual.visible = true
+		visual.frame = 0
+		ativa = true
+		visual.play("default")
 
-		$Sprite2D.visible = false
-		$Area2D.monitoring = false
+		await visual.animation_finished
 
-		await get_tree().create_timer(tempo_espera).timeout
+		ativa = false
+		visual.visible = false
 
-func _quando_entrou_no_fogo(corpo):
-	print("Corpo detectado pelo fogo: ", corpo.name)
+		await get_tree().create_timer(tempo_espera, false).timeout
 
-	if reiniciando:
+
+func _physics_process(_delta: float) -> void:
+	if not ativa or reiniciando:
 		return
 
-	if corpo is CharacterBody2D:
-		reiniciando = true
-		get_tree().reload_current_scene()
+	for corpo in area_dano.get_overlapping_bodies():
+		if not corpo.has_method("receber_dano"):
+			continue
+
+		var vidas_antes := EstadoJogo.vidas
+		corpo.receber_dano()
+
+		# Só reinicia se o jogador realmente perdeu uma vida.
+		if EstadoJogo.vidas < vidas_antes:
+			if EstadoJogo.vidas > 0:
+				reiniciando = true
+				call_deferred("_reiniciar_fase")
+			return
+
+
+func _reiniciar_fase() -> void:
+	get_tree().reload_current_scene()
