@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready() -> void:
+	Musica.tocar("res://assets/audio/menu.mp3")
 	$BotaoJogar.pressed.connect(_jogar)
 	$BotaoSair.pressed.connect(_sair)
 

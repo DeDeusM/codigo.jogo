@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bovvr0cwddx1o" path="res://scripts/mechanisms/elevador_lanterna.gd" id="5_8yxhb"]
 [ext_resource type="Texture2D" uid="uid://wrcp0qi7nku0" path="res://assets/sprites/eletricidade/surgimento_bolas.png" id="6_6kfe4"]
 [ext_resource type="Script" uid="uid://shx08lng5t3u" path="res://scripts/hazards/lancador_energia.gd" id="6_wrky1"]
+[ext_resource type="Script" uid="uid://vb3scim2frvh" path="res://scripts/saida_fase.gd" id="6_ww6p8"]
 [ext_resource type="PackedScene" uid="uid://cpdrspq4m3phi" path="res://scenes/hazards/bola_energia.tscn" id="7_thx5r"]
 [ext_resource type="Script" uid="uid://dwaarjt86cvus" path="res://scripts/hazards/placa_eletrica.gd" id="9_dki62"]
 [ext_resource type="Texture2D" uid="uid://dp8v5x4gu4hi4" path="res://assets/sprites/eletricidade/placa-eletrica.png" id="10_l1pdc"]
@@ -131,6 +132,9 @@ size = Vector2(1067, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wcbk"]
 size = Vector2(50, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yliq7"]
+size = Vector2(86, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5ng1"]
 atlas = ExtResource("6_6kfe4")
@@ -330,7 +334,7 @@ shape = SubResource("RectangleShape2D_3c2fn")
 [node name="LampadaEletrica2" type="Node2D" parent="." unique_id=458582058]
 script = ExtResource("2_xbai7")
 tempo_ligada = 1.5
-tempo_desligada = 0.5
+tempo_desligada = 1.0
 duracao_transicao = 0.6
 atraso_inicial = 0.8
 
@@ -452,6 +456,14 @@ position = Vector2(46, 272)
 
 [node name="SaidaFase" type="Marker2D" parent="." unique_id=812608380]
 position = Vector2(1300, 640)
+
+[node name="AreaSaida" type="Area2D" parent="SaidaFase" unique_id=2024320320]
+script = ExtResource("6_ww6p8")
+proxima_fase = "uid://cw3r0ue7qa38t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaidaFase/AreaSaida" unique_id=2145141438]
+position = Vector2(3, -14.5)
+shape = SubResource("RectangleShape2D_yliq7")
 
 [node name="LancadorEnergia" type="Node2D" parent="." unique_id=2123116674 node_paths=PackedStringArray("bola_referencia")]
 script = ExtResource("6_wrky1")

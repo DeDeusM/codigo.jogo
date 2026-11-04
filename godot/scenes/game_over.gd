@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready() -> void:
+	Musica.parar()
 	get_tree().paused = false
 	$BotaoInicio.pressed.connect(_voltar_inicio)
 	$BotaoSair.pressed.connect(_sair)
