@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://drfxgxxrpvade"]
+
+[ext_resource type="Texture2D" uid="uid://cdctu2tly61is" path="res://assets/ui/screen_victory.png" id="1_3ft4m"]
+[ext_resource type="Script" uid="uid://ctgng4baki3h3" path="res://scripts/vitoria.gd" id="1_iu1fh"]
+[ext_resource type="Texture2D" uid="uid://dsbudvcb375f6" path="res://assets/ui/botao-teladevitoria.png" id="3_esobp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdm2o"]
+atlas = ExtResource("3_esobp")
+region = Rect2(0, 0, 1165, 668)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osicj"]
+atlas = ExtResource("3_esobp")
+region = Rect2(0, 690, 1165, 660)
+
+[node name="Vitoria" type="Control" unique_id=331645793]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iu1fh")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=29400466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_3ft4m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotaoInicio" type="TextureButton" parent="." unique_id=20427889]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 423.0
+offset_right = 922.0
+offset_bottom = 518.0
+texture_normal = SubResource("AtlasTexture_fdm2o")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoSair" type="TextureButton" parent="." unique_id=1641252338]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 527.0
+offset_right = 918.0
+offset_bottom = 622.0
+texture_normal = SubResource("AtlasTexture_osicj")
+ignore_texture_size = true
+stretch_mode = 5

@@ -27,8 +27,8 @@ stretch_mode = 6
 
 [node name="BotaoInicio" type="TextureButton" parent="." unique_id=22688459]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 405.0
+offset_left = 542.0
+offset_top = 434.0
 offset_right = 708.0
 offset_bottom = 520.0
 texture_normal = ExtResource("3_7m3ot")
@@ -37,10 +37,10 @@ stretch_mode = 5
 
 [node name="BotaoSair" type="TextureButton" parent="." unique_id=1744646429]
 layout_mode = 0
-offset_left = 481.0
-offset_top = 504.0
-offset_right = 715.0
-offset_bottom = 615.0
+offset_left = 525.0
+offset_top = 511.0
+offset_right = 722.0
+offset_bottom = 600.0
 texture_normal = ExtResource("4_v3hpu")
 ignore_texture_size = true
 stretch_mode = 5
