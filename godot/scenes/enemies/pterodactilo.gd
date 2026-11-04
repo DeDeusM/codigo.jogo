@@ -1,0 +1,36 @@
+extends Area2D
+
+signal jogador_atingido
+
+@export var velocidade: float = 250.0
+@export var atraso_inicial: float = 0.0
+@export var limite_esquerdo: float = -100.0
+@export var limite_direito: float = 1780.0
+
+var pode_voar: bool = false
+
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+	$AnimatedSprite2D.play("default")
+	position.x = limite_esquerdo
+
+	await get_tree().create_timer(atraso_inicial, false).timeout
+	pode_voar = true
+
+
+func _process(delta: float) -> void:
+	if not pode_voar:
+		return
+
+	position.x += velocidade * delta
+
+	if position.x >= limite_direito:
+		position.x = limite_esquerdo
+
+
+func _on_body_entered(corpo: Node2D) -> void:
+	if corpo.has_method("receber_dano"):
+		corpo.receber_dano()
+		jogador_atingido.emit()
