@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cyio1mgdwsxmj"]
+
+[ext_resource type="Texture2D" uid="uid://dwvx5wc6xtfiv" path="res://assets/ui/tela-pause.png" id="1_3cxtx"]
+[ext_resource type="Texture2D" uid="uid://dwir5y1s2apku" path="res://assets/ui/continue.png" id="2_3cxtx"]
+[ext_resource type="Texture2D" uid="uid://dkdpy7abdafqt" path="res://assets/ui/rewind.png" id="3_x3eah"]
+[ext_resource type="Texture2D" uid="uid://braa4at7rjb8l" path="res://assets/ui/back-to-menu.png" id="4_camg0"]
+
+[node name="TelaPause" type="Control" unique_id=1298864345]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=2022414347]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -711.0
+offset_top = -220.0
+offset_right = -452.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_3cxtx")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BotaoContinuar" type="TextureButton" parent="." unique_id=1715562381]
+layout_mode = 0
+offset_left = -108.0
+offset_top = 106.0
+offset_right = 92.0
+offset_bottom = 219.0
+texture_normal = ExtResource("2_3cxtx")
+
+[node name="BotaoReiniciar" type="TextureButton" parent="." unique_id=217938225]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 185.0
+offset_right = 93.0
+offset_bottom = 285.0
+texture_normal = ExtResource("3_x3eah")
+
+[node name="BotaoMenu" type="TextureButton" parent="." unique_id=125871121]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 248.0
+offset_right = 93.0
+offset_bottom = 348.0
+texture_normal = ExtResource("4_camg0")

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cpdrspq4m3phi"]
+
+[ext_resource type="Texture2D" uid="uid://cjqw43fhu1jb6" path="res://assets/sprites/eletricidade/bolas-energia.png" id="1_dsgfp"]
+[ext_resource type="Script" uid="uid://teiobllxihao" path="res://scripts/hazards/bola_energia.gd" id="1_xcf4b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gcjc"]
+atlas = ExtResource("1_dsgfp")
+region = Rect2(1810, 0, 362, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e6cb"]
+atlas = ExtResource("1_dsgfp")
+region = Rect2(1448, 0, 362, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7t6m"]
+atlas = ExtResource("1_dsgfp")
+region = Rect2(1086, 0, 362, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvc66"]
+atlas = ExtResource("1_dsgfp")
+region = Rect2(724, 0, 362, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_387tr"]
+atlas = ExtResource("1_dsgfp")
+region = Rect2(362, 0, 362, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcf4b"]
+atlas = ExtResource("1_dsgfp")
+region = Rect2(0, 0, 362, 724)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_660v1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gcjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e6cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7t6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvc66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_387tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcf4b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osicj"]
+radius = 108.060165
+
+[node name="BolaEnergia" type="Area2D" unique_id=344955497]
+script = ExtResource("1_xcf4b")
+
+[node name="Visual" type="AnimatedSprite2D" parent="." unique_id=1216440873]
+position = Vector2(495, 378)
+sprite_frames = SubResource("SpriteFrames_660v1")
+frame_progress = 0.5163368
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83144197]
+position = Vector2(492, 379)
+shape = SubResource("CircleShape2D_osicj")

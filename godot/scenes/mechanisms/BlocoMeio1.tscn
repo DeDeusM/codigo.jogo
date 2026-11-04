@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://oafj3yosq8gd"]
+
+[ext_resource type="Script" uid="uid://c5qcbd64o7a56" path="res://scripts/mechanisms/bloco_quebravel.gd" id="1_6mxae"]
+[ext_resource type="Texture2D" uid="uid://jutuu6h4wx3n" path="res://assets/sprites/plataformas/plat-fase-2.png" id="1_kruol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(95, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c2fn"]
+size = Vector2(85, 18)
+
+[node name="BlocoQuebravel" type="AnimatableBody2D" unique_id=1931462044]
+script = ExtResource("1_6mxae")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=819388808]
+texture = ExtResource("1_kruol")
+
+[node name="Colisao" type="CollisionShape2D" parent="." unique_id=2045423875]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="DetectorPlayer" type="Area2D" parent="." unique_id=117731067]
+
+[node name="AreaDeteccao" type="CollisionShape2D" parent="DetectorPlayer" unique_id=43055908]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_3c2fn")

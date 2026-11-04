@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://mbvcvn2bmlbm"]
+
+[ext_resource type="Texture2D" uid="uid://dnl0bae2c8by" path="res://assets/backgrounds/cenario-f1-2.jpg.jpeg" id="1_1ocf6"]
+[ext_resource type="PackedScene" uid="uid://bgv8x7wbua0kr" path="res://scenes/mechanisms/moving_platform.tscn" id="2_u1f2d"]
+[ext_resource type="Script" uid="uid://di1dmuprl3p7w" path="res://scripts/mechanisms/moving_platform.gd" id="3_n40sw"]
+[ext_resource type="Texture2D" uid="uid://dxio60bt7r45c" path="res://assets/sprites/colecao-de-sprite-01.png" id="4_ga7mg"]
+[ext_resource type="PackedScene" uid="uid://brrb63pn8vhm4" path="res://scenes/hazards/Labareda.tscn" id="5_ga7mg"]
+[ext_resource type="Script" uid="uid://mg87wmq3eoaj" path="res://scenes/levels/interface.gd" id="6_omirp"]
+[ext_resource type="Script" uid="uid://vb3scim2frvh" path="res://scripts/saida_fase.gd" id="6_sl7v6"]
+[ext_resource type="PackedScene" uid="uid://cyio1mgdwsxmj" path="res://scenes/tela_pause.tscn" id="6_ti0he"]
+[ext_resource type="Texture2D" uid="uid://djyyxv154t6a1" path="res://assets/ui/botão-pause.png" id="7_omirp"]
+[ext_resource type="Texture2D" uid="uid://duk5ju5i2nv12" path="res://assets/ui/colecao-de-sprite-01 (2).png" id="9_7wwkh"]
+[ext_resource type="PackedScene" uid="uid://r00n58im5ji4" path="res://entities/player.tscn" id="10_72ss2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(200.76929, 30.384644)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c2fn"]
+size = Vector2(110.5, 123.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osicj"]
+size = Vector2(315, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti0he"]
+size = Vector2(457.5, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osicj"]
+atlas = ExtResource("7_omirp")
+region = Rect2(86, 0, 920, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72ss2"]
+atlas = ExtResource("7_omirp")
+region = Rect2(1027, 0, 885, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl7v6"]
+atlas = ExtResource("9_7wwkh")
+region = Rect2(60, 556, 112, 125)
+
+[node name="Fase1" type="Node2D" unique_id=1707874038]
+
+[node name="CenarioF12_jpg" type="Sprite2D" parent="." unique_id=292944472]
+texture = ExtResource("1_1ocf6")
+centered = false
+
+[node name="MovingPlatform" parent="." unique_id=997501100 instance=ExtResource("2_u1f2d")]
+position = Vector2(493, 449.00003)
+scale = Vector2(0.65, 0.65)
+distancia = 130.0
+
+[node name="MovingPlatform2" type="AnimatableBody2D" parent="." unique_id=1180565762]
+position = Vector2(672, 390.00003)
+scale = Vector2(0.65, 0.65)
+script = ExtResource("3_n40sw")
+distancia = 90.0
+velocidade = 2.2
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPlatform2" unique_id=146292248]
+position = Vector2(-10.769232, 18.461493)
+texture = ExtResource("4_ga7mg")
+region_enabled = true
+region_rect = Rect2(492, 574.1454, 252, 220.50415)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform2" unique_id=209839060]
+position = Vector2(-15.384617, -33.8462)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="MovingPlatform3" type="AnimatableBody2D" parent="." unique_id=613570162]
+position = Vector2(672, 390.00003)
+scale = Vector2(0.65, 0.65)
+script = ExtResource("3_n40sw")
+velocidade = 1.8
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPlatform3" unique_id=1625005684]
+position = Vector2(367.69235, 76.92304)
+texture = ExtResource("4_ga7mg")
+region_enabled = true
+region_rect = Rect2(745, 568, 262, 203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform3" unique_id=1892566157]
+position = Vector2(373.84622, 9.230723)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="InicioPlayer" type="Marker2D" parent="." unique_id=1807806599]
+
+[node name="Labareda" parent="." unique_id=1755425330 instance=ExtResource("5_ga7mg")]
+position = Vector2(362, 488)
+
+[node name="Labareda2" parent="." unique_id=1004334499 instance=ExtResource("5_ga7mg")]
+position = Vector2(778, 478)
+
+[node name="AreaSaida" type="Area2D" parent="." unique_id=616575690]
+script = ExtResource("6_sl7v6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSaida" unique_id=2130990528]
+position = Vector2(1345.25, 393.625)
+shape = SubResource("RectangleShape2D_3c2fn")
+
+[node name="PlataformaTeste" type="StaticBody2D" parent="." unique_id=1802319917]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlataformaTeste" unique_id=1862301266]
+position = Vector2(159.5, 460)
+shape = SubResource("RectangleShape2D_osicj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlataformaTeste" unique_id=968470253]
+position = Vector2(1206.25, 474)
+shape = SubResource("RectangleShape2D_ti0he")
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1699855061]
+script = ExtResource("6_omirp")
+
+[node name="TelaPause" parent="Interface" unique_id=1298864345 instance=ExtResource("6_ti0he")]
+offset_left = 725.0
+offset_top = 154.0
+offset_right = 725.0
+offset_bottom = 154.0
+
+[node name="BotaoPause" type="TextureButton" parent="Interface" unique_id=2058025637]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 84.0
+offset_bottom = 84.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_osicj")
+texture_pressed = SubResource("AtlasTexture_72ss2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Vidas" type="HBoxContainer" parent="Interface" unique_id=1288275282]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 18.0
+offset_right = -21.0
+offset_bottom = 58.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Coracao1" type="TextureRect" parent="Interface/Vidas" unique_id=1684253202]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_sl7v6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coracao2" type="TextureRect" parent="Interface/Vidas" unique_id=508089036]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_sl7v6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coracao3" type="TextureRect" parent="Interface/Vidas" unique_id=410071374]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_sl7v6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Player" parent="." unique_id=789735820 instance=ExtResource("10_72ss2")]
+position = Vector2(-283, -382)
+scale = Vector2(6, 6)

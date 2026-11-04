@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://dk5maha2v57gu"]
+
+[ext_resource type="Texture2D" uid="uid://22jcnuw6c8fl" path="res://assets/backgrounds/cenario-f2.png" id="1_k7c1p"]
+[ext_resource type="PackedScene" uid="uid://oafj3yosq8gd" path="res://scenes/mechanisms/BlocoMeio1.tscn" id="2_t0jkm"]
+[ext_resource type="Script" uid="uid://mg87wmq3eoaj" path="res://scenes/levels/interface.gd" id="3_hb0mf"]
+[ext_resource type="PackedScene" uid="uid://cyio1mgdwsxmj" path="res://scenes/tela_pause.tscn" id="4_kiwfv"]
+[ext_resource type="Texture2D" uid="uid://djyyxv154t6a1" path="res://assets/ui/botão-pause.png" id="5_jn4nd"]
+[ext_resource type="PackedScene" uid="uid://dtl31kt8er1ju" path="res://scenes/enemies/pterodactilo.tscn" id="6_kiwfv"]
+[ext_resource type="Texture2D" uid="uid://duk5ju5i2nv12" path="res://assets/ui/colecao-de-sprite-01 (2).png" id="6_q48ko"]
+[ext_resource type="PackedScene" uid="uid://r00n58im5ji4" path="res://entities/player.tscn" id="7_jn4nd"]
+[ext_resource type="Script" uid="uid://vb3scim2frvh" path="res://scripts/saida_fase.gd" id="9_5oobb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7c1p"]
+size = Vector2(2032, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
+size = Vector2(365, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvvqh"]
+size = Vector2(725, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7wpd"]
+size = Vector2(130, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb0mf"]
+size = Vector2(195, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0jkm"]
+size = Vector2(900, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb0mf"]
+atlas = ExtResource("5_jn4nd")
+region = Rect2(86, 0, 920, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiwfv"]
+atlas = ExtResource("5_jn4nd")
+region = Rect2(1027, 0, 885, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oobb"]
+atlas = ExtResource("6_q48ko")
+region = Rect2(60, 556, 112, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c2fn"]
+size = Vector2(78.5, 229)
+
+[node name="fase_2" type="Node2D" unique_id=111685781]
+
+[node name="CenarioF2_png" type="Sprite2D" parent="." unique_id=1456397814]
+position = Vector2(913.25, 388)
+scale = Vector2(0.8988183, 1)
+texture = ExtResource("1_k7c1p")
+
+[node name="CenarioColisoes" type="StaticBody2D" parent="CenarioF2_png" unique_id=308086874]
+
+[node name="ColisaoChao" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=1676474512]
+position = Vector2(0, 368)
+shape = SubResource("RectangleShape2D_k7c1p")
+
+[node name="PlataformaMeioEsquerda" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=2027889078]
+position = Vector2(-470, 38)
+shape = SubResource("RectangleShape2D_fdm2o")
+
+[node name="PlataformaMeioSuperiorEquerda" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=681287847]
+position = Vector2(-653, -221)
+shape = SubResource("RectangleShape2D_qvvqh")
+
+[node name="PlataformaMeioSuperiorDireitaA" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=1539692635]
+position = Vector2(272, -221)
+shape = SubResource("RectangleShape2D_c7wpd")
+
+[node name="PlataformaMeioSuperiorDireitaB" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=2076786257]
+position = Vector2(633, -221)
+shape = SubResource("RectangleShape2D_hb0mf")
+
+[node name="PlataformaMeioDireita" type="CollisionShape2D" parent="CenarioF2_png/CenarioColisoes" unique_id=902572444]
+position = Vector2(566, 38)
+shape = SubResource("RectangleShape2D_t0jkm")
+
+[node name="BlocoQuebravel" parent="." unique_id=1931462044 instance=ExtResource("2_t0jkm")]
+position = Vector2(716, 442)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoQuebravel2" parent="." unique_id=1640715156 instance=ExtResource("2_t0jkm")]
+position = Vector2(797, 442)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoQuebravel3" parent="." unique_id=1490159359 instance=ExtResource("2_t0jkm")]
+position = Vector2(879, 441)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoQuebravel4" parent="." unique_id=1373860261 instance=ExtResource("2_t0jkm")]
+position = Vector2(957.99994, 441)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior1" parent="." unique_id=1456900768 instance=ExtResource("2_t0jkm")]
+position = Vector2(740, 180)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior2" parent="." unique_id=146725694 instance=ExtResource("2_t0jkm")]
+position = Vector2(831, 179.99998)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior3" parent="." unique_id=1021876783 instance=ExtResource("2_t0jkm")]
+position = Vector2(923, 180)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoSuperior4" parent="." unique_id=838559686 instance=ExtResource("2_t0jkm")]
+position = Vector2(1012.99994, 179.99998)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoDireita1" parent="." unique_id=1727321480 instance=ExtResource("2_t0jkm")]
+position = Vector2(1274, 179)
+scale = Vector2(1.21, 1.21)
+
+[node name="BlocoDireita2" parent="." unique_id=906573457 instance=ExtResource("2_t0jkm")]
+position = Vector2(1339.9999, 179)
+scale = Vector2(1.21, 1.21)
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=722066312]
+script = ExtResource("3_hb0mf")
+
+[node name="TelaPause" parent="Interface" unique_id=1298864345 instance=ExtResource("4_kiwfv")]
+offset_left = 974.0
+offset_top = 145.0
+offset_right = 974.0
+offset_bottom = 145.0
+
+[node name="BotaoPause" type="TextureButton" parent="Interface" unique_id=15581535]
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 71.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_hb0mf")
+texture_pressed = SubResource("AtlasTexture_kiwfv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Vidas" type="HBoxContainer" parent="Interface" unique_id=378152772]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 18.0
+offset_right = -21.0
+offset_bottom = 58.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Coracao1" type="TextureRect" parent="Interface/Vidas" unique_id=1830492787]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_5oobb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coracao2" type="TextureRect" parent="Interface/Vidas" unique_id=207524399]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_5oobb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coracao3" type="TextureRect" parent="Interface/Vidas" unique_id=279805390]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_5oobb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pterodactilo" parent="." unique_id=1719083296 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 666)
+
+[node name="Pterodactilo2" parent="." unique_id=941125692 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 666)
+atraso_inicial = 3.0
+
+[node name="Pterodactilo5" parent="." unique_id=670146040 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 666)
+atraso_inicial = 6.0
+
+[node name="Pterodactilo3" parent="." unique_id=1755094948 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 350)
+velocidade = 270.0
+atraso_inicial = 0.8
+
+[node name="Pterodactilo4" parent="." unique_id=533712753 instance=ExtResource("6_kiwfv")]
+position = Vector2(-118, 350)
+atraso_inicial = 4.8
+
+[node name="Player" parent="." unique_id=789735820 instance=ExtResource("7_jn4nd")]
+position = Vector2(-232, -663)
+scale = Vector2(6, 6)
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1055182485]
+limit_right = 1829
+limit_bottom = 774
+
+[node name="AreaSaida" type="Area2D" parent="." unique_id=315050996]
+script = ExtResource("9_5oobb")
+proxima_fase = "uid://pf410sygn1nr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSaida" unique_id=615990984]
+position = Vector2(1798.25, 627)
+shape = SubResource("RectangleShape2D_3c2fn")
+
+[editable path="Player"]
