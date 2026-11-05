@@ -5,40 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DINUX</title>
+    <title>PROJETO ARQUIVO X</title>
 
     <link rel="stylesheet" href="estilo.css">
     <link rel="icon" href="dinux.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <header id="inicio">
-    <h1>Dinux</h1>
+    <h1>Projeto Arquivo X</h1>
 </header>
 
 <nav>
-    <a href="#historia">História</a>
-    <a href="#fases">Fases</a>
-    <a href="#gameplay">Gameplay</a>
-    <a href="#desenvolvimento">Desenvolvimento</a>
-    <a href="#creditos">Créditos</a>
+    <a href="#historia" data-i18n="historia">História</a>
+    <a href="#fases" data-i18n="fases">Fases</a>
+    <a href="#gameplay" data-i18n="gameplay">Gameplay</a>
+    <a href="#desenvolvimento" data-i18n="desenvolvimento">Desenvolvimento</a>
+    <a href="#creditos" data-i18n="creditos">Créditos</a>
     <a href="https://github.com/DeDeusM/codigo.jogo" target="_blank">GitHub</a>
-    <a href="jogo.galeria.html">Galeria</a>
+    <a href="jogo.galeria.html" data-i18n="galeria">Galeria</a>
+
+    <label for="seletor-idioma" data-i18n="idioma">Idioma:</label>
+    <select id="seletor-idioma">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+
     <button id="botao-tema" aria-label="Alternar tema claro/escuro">☀️</button>
 </nav>
 
 <section class="destaque">
-    <h2>Restaure o Sistema</h2>
+    <h2 data-i18n="titulo">Restaure o Sistema</h2>
 
-    <p>
-        Um vírus chamado WIN.EXE se infiltrou no mundo digital
-        e corrompeu suas configurações. Agora Dinux precisa
-        atravessar três regiões devastadas. A Zona dos Coolers,
-        o Distrito do HD e a Central de Energia, para restaurar
-        o sistema antes que seja tarde demais.
+    <p data-i18n="resumo">
+        Um vírus chamado 4rqu1v0_X entrou no sistema por um pendrive e nem o antivírus
+        nem o firewall conseguiram impedi-lo. Agora Dinux precisa voltar das férias
+        para restaurar o computador antes que seja tarde demais.
     </p>
 
     <div class="dino">
@@ -47,171 +53,145 @@
 </section>
 
 <section id="historia">
-    <h2>História</h2>
+    <h2 data-i18n="historiaTitulo">História</h2>
 
-    <p>
-        Dinux é um arquivo antigo que vive num mundo distante
-        do mundo dos arquivos novos e atualizados. Anos atrás,
-        ele foi considerado um herói, sempre se adaptando às
-        constantes atualizações daquele universo digital.
-    </p>
-
-    <p>
-        Com o tempo, Dinux passou a acreditar que sua proteção
-        não era mais necessária. Afinal, o firewall e o
-        antivírus já cuidavam de tudo. Ele se acomodou, deixando
-        a vigilância de lado.
-    </p>
-
-    <p>
-        Até que, um dia, um vírus consegue driblar as defesas e
-        se infiltrar no mundo: WIN.EXE. Assim que se instala,
-        ele começa a corromper as configurações de tudo ao redor.
-    </p>
-
-    <p>
-        Na Zona dos Coolers, as temperaturas sobem
-        descontroladamente e o calor toma conta do ambiente.
-        No Distrito do HD (a região mais tecnológica do mundo)
-        tudo se torna um local abandonado e envelhecido. E na
-        Central de Energia, a última linha de defesa, a energia
-        começa a faltar enquanto raios descontrolados caem sobre
-        a cidade.
-    </p>
-
-    <p>
-        Agora, Dinux precisa deixar a acomodação para trás e
-        atravessar essas três regiões corrompidas para recuperar
-        os recursos perdidos e derrotar WIN.EXE de uma vez por
-        todas.
+    <p data-i18n="historiaP1">
+        Dinux é um arquivo antigo que morava no mundo dos computadores, era tratado como herói, salvava o mundo de malwares e de vírus,
+        mas com a evolução da computação ele viu que não tinha mais necessidade de proteger aquele mundo, então foi tirar férias sem tempo
+        determinado pra volta, quando um dia de repente, determinaram sua volta. Um vírus que entrou no sistema através de um pendrive do
+        usuário, 4rqu1v0_X, esse era o vilão da vez, antivírus e o firewall não conseguiram impedi-lo, então sobrou ao nosso dinossauro herói.
+        No jogo terão desafios a partir das mudanças que o vírus fez no computador do usuário.
     </p>
 </section>
 
 <section id="fases">
-    <h2>Fases</h2>
+    <h2 data-i18n="fases">Fases</h2>
 
     <div class="cartao">
-        <h3>Fase 1 - CPU</h3>
+        <h3 data-i18n="fase1Titulo">Fase 1 - CPU</h3>
 
-        <p>
-            O núcleo central do computador.
-        </p>
+        <p data-i18n="fase1Texto">O núcleo central do computador.</p>
 
         <div class="cartao-detalhes">
-            <img src="cenario-f1.png" alt="Print da Fase 1  - CPU">
+            <img src="cenario-f1.png" alt="Print da Fase 1 - CPU">
         </div>
     </div>
 
-        <div class="cartao">
-        <h3>Fase 2 - CPU</h3>
+    <div class="cartao">
+        <h3 data-i18n="fase2Titulo">Fase 2 - Memória RAM</h3>
 
-        <p>
-            Circuitos, blocos de dados e regiões instáveis
-            do sistema.
-        </p>
-         <div class="cartao-detalhes">
+        <p data-i18n="fase2Texto">Circuitos, blocos de dados e regiões instáveis do sistema.</p>
+
+        <div class="cartao-detalhes">
             <img src="cenario-f2.png" alt="Print da Fase 2 - Memória RAM">
         </div>
     </div>
 
-        <div class="cartao">
-    <h3>Fase 3 - Fonte de Energia</h3>
+    <div class="cartao">
+        <h3 data-i18n="fase3Titulo">Fase 3 - Fonte de Energia</h3>
 
-    <p>
-        escrver detalhes da fase 3
-    </p>
+        <p data-i18n="fase3Texto">A última linha de defesa, onde a energia falha e raios descontrolados caem sobre o sistema.</p>
+
         <div class="cartao-detalhes">
             <img src="cenario-f3.png" alt="Print da Fase 3 - Fonte de Energia">
         </div>
     </div>
-    
+
+    <div class="cartao">
+        <h3 data-i18n="fase4Titulo">Fase 4 - Sistema Operacional</h3>
+
+        <p data-i18n="fase4Texto">O núcleo do sistema, onde o vírus se esconde e tenta corromper os arquivos.</p>
+
+        <div class="cartao-detalhes">
+            <img src="cenario-f4.png" alt="Print da Fase 4 - Sistema Operacional">
+        </div>
+    </div>
 </section>
 
 <section id="gameplay">
-    <h2>Gameplay</h2>
-        <video controls>
-            <source src="gameplay.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-</section>
-<section id="desenvolvimento">
-    <h2>Ferramentas de Desenvolvimento</h2>
+    <h2 data-i18n="gameplay">Gameplay</h2>
 
-    <p>
-        Ferramentas utilizadas no projeto:
-    </p>
-
-    <ul>
-        <li>GDScript</li>
-        <li>Aseprite</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-    </ul>
+    <video controls>
+        <source src="gameplay.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
 </section>
+
+<section id="documentacao">
+    <h2 data-i18n="documentacaoTitulo">Documentação</h2>
+
+<a href="documentacao-arquivo-projeto-x.pdf"
+   download="Documentação Arquivo - Projeto X.pdf"
+   class="botao-download"
+   data-i18n="botaoDownload">
+   Faça o download da documentação completa do projeto em PDF
+</a>
+
+</section>
+
 <section id="creditos">
-    <h2>Equipe de Desenvolvimento</h2>
+    <h2 data-i18n="creditosTitulo">Equipe de Desenvolvimento</h2>
 
     <div class="linha-superior">
-
         <a href="https://github.com/DeDeusM" target="_blank" class="integrante">
-            <img src="daniel.png" alt="Daniel">
+            <img src="foto_daniel.jpeg" alt="Daniel">
             <h3>Daniel</h3>
-            <p>Desenvolvedor WEB</p>
+            <p data-i18n="papelWeb">Desenvolvedor WEB</p>
         </a>
 
         <a href="https://github.com/EduardoDiiazzdev" target="_blank" class="integrante">
-            <img src="eduardo.png" alt="Eduardo Dias">
+            <img src="foto_eduardo.jpeg" alt="Eduardo Dias">
             <h3>Eduardo Dias</h3>
-            <p>Design Gráfico</p>
+            <p data-i18n="papelDesign">Design Gráfico</p>
         </a>
 
-        <a href="https://github.com/usuariogabi" target="_blank" class="integrante">
-            <img src="gabrielly.png" alt="Gabrielly">
+        <a href="https://github.com/gabrielly-sv" target="_blank" class="integrante">
+            <img src="foto_gaby.jpeg" alt="Gabrielly">
             <h3>Gabrielly</h3>
-            <p>Programadora</p>
+            <p data-i18n="papelProgramadora">Programadora</p>
         </a>
-
     </div>
 
     <div class="linha-inferior">
-
-        <a href="https://github.com/usuariomauro" target="_blank" class="integrante">
-            <img src="mauro.png" alt="Mauro">
+        <a href="https://github.com/mhdev22" target="_blank" class="integrante">
+            <img src="foto_mauro.jpeg" alt="Mauro">
             <h3>Mauro</h3>
-            <p>Programador</p>
+            <p data-i18n="papelProgramador">Programador</p>
         </a>
 
         <a href="https://github.com/Suri-007" target="_blank" class="integrante">
-            <img src="suri.png" alt="Suri">
+            <img src="foto_suri.jpeg" alt="Suri">
             <h3>Suri</h3>
-            <p>Tutoriais e Pesquisa Técnica</p>
+            <p data-i18n="papelTutoriais">Tutoriais e Pesquisa Técnica</p>
         </a>
     </div>
 </section>
+
 <footer class="fim">
     <section id="links">
         <table>
-        <tr>
-            <td>
-                <h3>Links Rápidos</h3>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="#inicio">Início da Página</a><br>
-                <a href="#gameplay">Gameplay</a><br>
-                <a href="jogo.galeria.html">Galeria</a><br>
-                <a href="#creditos">Créditos</a>
-            </td>
-        </tr>
-    </table>
+            <tr>
+                <td>
+                    <h3 data-i18n="linksRapidos">Links Rápidos</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#inicio" data-i18n="inicioPagina">Início da Página</a><br>
+                    <a href="#gameplay" data-i18n="gameplay">Gameplay</a><br>
+                    <a href="#documentacao" data-i18n="documentacaoTitulo">Documentação</a><br>
+                    <a href="jogo.galeria.html" data-i18n="galeria">Galeria</a><br>
+                    <a href="#creditos" data-i18n="creditos">Créditos</a>
+                </td>
+            </tr>
+        </table>
     </section>
     <p>
-        Projeto desenvolvido para atividade de conclusão do 1º Ano.<br>
-        2026 © Todos os Direitos Reservados.
+        <span data-i18n="rodape1">Projeto desenvolvido para atividade de conclusão do 1º Ano.</span><br>
+        <span data-i18n="rodape2">2026 © Todos os Direitos Reservados.</span>
     </p>
 </footer>
+
 <script src="jogo.js"></script>
 </body>
 </html>
