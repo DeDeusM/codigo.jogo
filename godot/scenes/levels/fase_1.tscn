@@ -162,4 +162,6 @@ stretch_mode = 5
 
 [node name="Player" parent="." unique_id=789735820 instance=ExtResource("10_72ss2")]
 position = Vector2(-283, -382)
-scale = Vector2(6, 6)
+scale = Vector2(5, 5)
+
+[editable path="Player"]

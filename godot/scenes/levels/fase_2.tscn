@@ -172,14 +172,14 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Pterodactilo" parent="." unique_id=1719083296 instance=ExtResource("6_kiwfv")]
-position = Vector2(-118, 666)
+position = Vector2(-118, 695)
 
 [node name="Pterodactilo2" parent="." unique_id=941125692 instance=ExtResource("6_kiwfv")]
-position = Vector2(-118, 666)
+position = Vector2(-118, 694)
 atraso_inicial = 3.0
 
 [node name="Pterodactilo5" parent="." unique_id=670146040 instance=ExtResource("6_kiwfv")]
-position = Vector2(-118, 666)
+position = Vector2(-118, 693)
 atraso_inicial = 6.0
 
 [node name="Pterodactilo3" parent="." unique_id=1755094948 instance=ExtResource("6_kiwfv")]
@@ -193,7 +193,7 @@ atraso_inicial = 4.8
 
 [node name="Player" parent="." unique_id=789735820 instance=ExtResource("7_jn4nd")]
 position = Vector2(-232, -663)
-scale = Vector2(6, 6)
+scale = Vector2(5, 5)
 
 [node name="Camera2D" parent="Player" index="2" unique_id=1055182485]
 limit_right = 1829
