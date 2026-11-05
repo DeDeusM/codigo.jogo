@@ -7,54 +7,116 @@
 
     <title>Galeria</title>
 
-<link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo.css">
     <link rel="icon" href="dinux.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
 </head>
 
 <body>
-   <header>
-    <h1>Dinux</h1>
+<header>
+    <h1>Projeto Arquivo X</h1>
 </header>
 
 <nav>
-    <a href="jogo.html#historia">História</a>
-    <a href="jogo.html#fases">Fases</a>
-    <a href="jogo.html#gameplay">Gameplay</a>
-    <a href="jogo.html#desenvolvimento">Desenvolvimento</a>
-    <a href="jogo.html#creditos">Créditos</a>
+    <a href="jogo.html#historia" data-i18n="historia">História</a>
+    <a href="jogo.html#fases" data-i18n="fases">Fases</a>
+    <a href="jogo.html#gameplay" data-i18n="gameplay">Gameplay</a>
+    <a href="jogo.html#desenvolvimento" data-i18n="desenvolvimento">Desenvolvimento</a>
+    <a href="jogo.html#creditos" data-i18n="creditos">Créditos</a>
     <a href="https://github.com/DeDeusM/codigo.jogo" target="_blank">GitHub</a>
-    <a href="jogo.galeria.html">Galeria</a>
+    <a href="jogo.galeria.html" data-i18n="galeria">Galeria</a>
+
+    <label for="seletor-idioma" data-i18n="idioma">Idioma:</label>
+    <select id="seletor-idioma">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+
     <button id="botao-tema" aria-label="Alternar tema claro/escuro">☀️</button>
 </nav>
 
-<section class="destaque"><h2>GALERIA</h2></section>
+<section class="destaque">
+    <h2 data-i18n="galeria">Galeria</h2>
+</section>
+
 <main>
-    <h1 class="story">Storyboard</h1>
-    <nav class="fases">
-        <h2>Primeira Fase</h2>
-<img src="Fase1.jpeg" alt="Fase1">
-</nav>  
+    <h1 class="story" data-i18n="storyboard">Storyboard</h1>
 
-<nav>
-    <h2>Segunda Fase</h2>
-<img src="Fase2.jpeg" alt="Fase2">
-</nav>
+    <section class="galeria">
+        <h2 data-i18n="primeiraFase">Primeira Fase</h2>
+        <img src="fase1.jpeg" alt="Fase 1">
+    </section>
 
-<nav>
-    <h2>Terceira Fase</h2>
-<img src="Fase3.jpeg" alt="Fase3">
-</nav>
+    <section class="galeria">
+        <h2 data-i18n="segundaFase">Segunda Fase</h2>
+        <img src="fase2.jpeg" alt="Fase 2">
+    </section>
 
-<nav>
-    <h2>Personagem principal (Dinux)</h2>
-<img src="dinux.png" alt="dinux">
-</nav>
+    <section class="galeria">
+        <h2 data-i18n="terceiraFase">Terceira Fase</h2>
+        <img src="fase3.jpeg" alt="Fase 3">
+    </section>
 
+    <h1 class="story" data-i18n="cenarios">Cenários do Jogo</h1>
+
+    <section class="galeria">
+        <h2 data-i18n="cenarioFase1">Cenário da Primeira Fase</h2>
+        <img src="cenario-f1.png" alt="Cenário da Fase 1 - CPU">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="cenarioFase2">Cenário da Segunda Fase</h2>
+        <img src="cenario-f2.png" alt="Cenário da Fase 2 - Memória RAM">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="cenarioFase3">Cenário da Terceira Fase</h2>
+        <img src="cenario-f3.png" alt="Cenário da Fase 3 - Fonte de Energia">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="cenarioFase4">Cenário da Quarta Fase</h2>
+        <img src="cenario-f4.png" alt="Cenário da Fase 4 - Sistema Operacional">
+    </section>
+
+    <h1 class="story" data-i18n="codigoTitulo">Código do Jogo</h1>
+
+    <section class="galeria">
+        <h2 data-i18n="codigo1">Trecho de código 1</h2>
+        <img src="code.png" alt="Trecho de código 1">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="codigo2">Trecho de código 2</h2>
+        <img src="code2.png" alt="Trecho de código 2">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="codigo3">Trecho de código 3</h2>
+        <img src="code3.png" alt="Trecho de código 3">
+    </section>
+
+    <h1 class="story" data-i18n="personagemTitulo">Personagem</h1>
+
+    <section class="galeria">
+        <h2 data-i18n="personagem">Personagem principal (Dinux)</h2>
+        <img src="dinux.png" alt="Dinux">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="dinuxAnimado">Dinux animado</h2>
+        <img src="pixil-frame-0.gif" alt="Dinux animado">
+    </section>
 </main>
+<footer class="fim">
+    <p>
+        <span data-i18n="rodape1">Projeto desenvolvido para atividade de conclusão do 1º Ano.</span><br>
+        <span data-i18n="rodape2">2026 © Todos os Direitos Reservados.</span>
+    </p>
+</footer>
 <script src="jogo.js"></script>
 </body>
 </html>
