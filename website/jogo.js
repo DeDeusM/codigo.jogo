@@ -56,7 +56,7 @@ const traducoes = {
         documentacaoTitulo: "Documentação",
         botaoDownload: "Faça o download da documentação completa do projeto em PDF",
         projetoTitulo: "Download do Projeto",
-        botaoDownloadjogo: "Faça o download do jogo completo para Windows",
+        botaoDownloadjogo: "Faça o download do jogo completo",
 
         desenvolvimentoTitulo: "Ferramentas de Desenvolvimento",
         ferramentasTexto: "Ferramentas utilizadas no projeto:",
@@ -116,7 +116,7 @@ const traducoes = {
 
         documentacaoTitulo: "Documentation",
         botaoDownload: "Download the complete project documentation as a PDF",
-        botaoDownloadjogo: "Download the complete game for Windows",
+        botaoDownloadjogo: "Download the complete game",
         projetoTitulo: "Project Download",
 
         desenvolvimentoTitulo: "Development Tools",
@@ -177,7 +177,7 @@ const traducoes = {
 
         documentacaoTitulo: "Documentación",
         botaoDownload: "Descarga la documentación completa del proyecto en PDF",
-        botaoDownloadjogo: "Descarga el juego completo para Windows",
+        botaoDownloadjogo: "Descarga el juego",
         projetoTitulo: "Download del Proyecto",
 
         desenvolvimentoTitulo: "Herramientas de Desarrollo",
