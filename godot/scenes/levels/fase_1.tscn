@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://djyyxv154t6a1" path="res://assets/ui/botão-pause.png" id="7_omirp"]
 [ext_resource type="Texture2D" uid="uid://duk5ju5i2nv12" path="res://assets/ui/colecao-de-sprite-01 (2).png" id="9_7wwkh"]
 [ext_resource type="PackedScene" uid="uid://r00n58im5ji4" path="res://entities/player.tscn" id="10_72ss2"]
+[ext_resource type="Script" uid="uid://7a2c34ybk3t4" path="res://scripts/hazards/lava.gd" id="12_a560k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdm2o"]
 size = Vector2(200.76929, 30.384644)
@@ -35,6 +36,9 @@ region = Rect2(1027, 0, 885, 786)
 [sub_resource type="AtlasTexture" id="AtlasTexture_sl7v6"]
 atlas = ExtResource("9_7wwkh")
 region = Rect2(60, 556, 112, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u840f"]
+size = Vector2(1427, 95)
 
 [node name="Fase1" type="Node2D" unique_id=1707874038]
 
@@ -163,5 +167,12 @@ stretch_mode = 5
 [node name="Player" parent="." unique_id=789735820 instance=ExtResource("10_72ss2")]
 position = Vector2(-283, -382)
 scale = Vector2(5, 5)
+
+[node name="Lava" type="Area2D" parent="." unique_id=1573450874]
+script = ExtResource("12_a560k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=1596790127]
+position = Vector2(717.5, 689.5)
+shape = SubResource("RectangleShape2D_u840f")
 
 [editable path="Player"]
