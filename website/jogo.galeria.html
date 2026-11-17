@@ -23,17 +23,36 @@
     <a href="index.html#historia" data-i18n="historia">História</a>
     <a href="index.html#fases" data-i18n="fases">Fases</a>
     <a href="index.html#gameplay" data-i18n="gameplay">Gameplay</a>
-    <a href="index.html#desenvolvimento" data-i18n="desenvolvimento">Desenvolvimento</a>
+    <a href="index.html#projeto" data-i18n="projeto">Projeto</a>
     <a href="index.html#creditos" data-i18n="creditos">Créditos</a>
     <a href="https://github.com/DeDeusM/codigo.jogo" target="_blank">GitHub</a>
     <a href="jogo.galeria.html" data-i18n="galeria">Galeria</a>
 
-    <label for="seletor-idioma" data-i18n="idioma">Idioma:</label>
-    <select id="seletor-idioma">
-        <option value="pt-BR">Português</option>
-        <option value="en">English</option>
-        <option value="es">Español</option>
-    </select>
+     <div class="seletor-idioma-container">
+    <button type="button" id="idioma-botao" aria-expanded="false" aria-haspopup="listbox">
+        <img id="idioma-bandeira" src="https://flagcdn.com/w40/br.png" alt="Bandeira" width="24" height="16">
+        <span id="idioma-atual">PT</span>
+    </button>
+
+    <ul id="idioma-lista" role="listbox">
+        <li data-idioma="pt-BR" role="option" aria-selected="true">
+            <img src="https://flagcdn.com/w40/br.png" alt="PT" width="24" height="16">
+            <span>PT</span>
+        </li>
+        <li data-idioma="en" role="option" aria-selected="false">
+            <img src="https://flagcdn.com/w40/gb.png" alt="EN" width="24" height="16">
+            <span>EN</span>
+        </li>
+        <li data-idioma="es" role="option" aria-selected="false">
+            <img src="https://flagcdn.com/w40/es.png" alt="ES" width="24" height="16">
+            <span>ES</span>
+        </li>
+        <li data-idioma="fr" role="option" aria-selected="false">
+            <img src="https://flagcdn.com/w40/fr.png" alt="FR" width="24" height="16">
+            <span>FR</span>
+        </li>
+    </ul>
+</div>
 
     <button id="botao-tema" aria-label="Alternar tema claro/escuro">☀️</button>
 </nav>
@@ -110,6 +129,17 @@
         <h2 data-i18n="dinuxAnimado">Dinux animado</h2>
         <img src="pixil-frame-0.gif" alt="Dinux animado">
     </section>
+
+    <section class="galeria">
+        <h2 data-i18n="inimigo">Inimigo</h2>
+        <img src="enemy-f3.png" alt="Inimigo">
+    </section>
+
+    <section class="galeria">
+        <h2 data-i18n="inimigoAnimado">Inimigo animado</h2>
+        <img src="enemy-f3.gif" alt="Inimigo animado">
+    </section>
+
 </main>
 <footer class="fim">
     <p>

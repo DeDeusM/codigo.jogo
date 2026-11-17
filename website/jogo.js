@@ -33,7 +33,7 @@ const traducoes = {
         historia: "História",
         fases: "Fases",
         gameplay: "Gameplay",
-        desenvolvimento: "Desenvolvimento",
+        projeto: "Projeto",
         creditos: "Créditos",
         galeria: "Galeria",
         idioma: "Idioma:",
@@ -88,13 +88,15 @@ const traducoes = {
         codigo3: "Trecho de código 3",
         personagemTitulo: "Personagem",
         dinuxAnimado: "Dinux animado",
+        inimigo: "Inimigo",
+        inimigoAnimado: "Inimigo animado",
     },
 
     en: {
         historia: "Story",
         fases: "Levels",
         gameplay: "Gameplay",
-        desenvolvimento: "Development",
+        projeto: "Project",
         creditos: "Credits",
         galeria: "Gallery",
         idioma: "Language:",
@@ -149,13 +151,15 @@ const traducoes = {
         codigo3: "Code Snippet 3",
         personagemTitulo: "Character",
         dinuxAnimado: "Animated Dinux",
+        inimigo: "Enemy",
+        inimigoAnimado: "Animated Enemy",
     },
 
     es: {
         historia: "Historia",
         fases: "Niveles",
         gameplay: "Jugabilidad",
-        desenvolvimento: "Desarrollo",
+        projeto: "Proyecto",
         creditos: "Créditos",
         galeria: "Galería",
         idioma: "Idioma:",
@@ -210,19 +214,98 @@ const traducoes = {
         codigo3: "Fragmento de código 3",
         personagemTitulo: "Personaje",
         dinuxAnimado: "Dinux animado",
+        inimigo: "Enemigo",
+        inimigoAnimado: "Enemigo animado",
+    },
+    
+    fr: {
+        historia: "Histoire",
+        fases: "Niveaux",
+        gameplay: "Gameplay",
+        projeto: "Projet",
+        creditos: "Crédits",
+        galeria: "Galerie",
+        idioma: "Langue:",
+
+        titulo: "Restaurer le système",
+        resumo: "Un virus appelé 4rqu1v0_X est entré dans le système via une clé USB, et ni l'antivirus ni le pare-feu n'ont pu l'arrêter. Maintenant, Dinux doit revenir de ses vacances pour restaurer l'ordinateur avant qu'il ne soit trop tard.",
+
+        historiaTitulo: "Histoire",
+        historiaP1: "Dinux est un ancien fichier qui vivait dans le monde des ordinateurs. Il était considéré comme un héros, sauvant le monde des logiciels malveillants et des virus, mais avec l'évolution de l'informatique, il a vu qu'il n'était plus nécessaire de protéger ce monde, alors il est parti en vacances sans date de retour déterminée. Jusqu'à ce qu'un jour, soudainement, son retour soit ordonné. Un virus qui est entré dans le système via la clé USB de l'utilisateur, 4rqu1v0_X, était le méchant du moment. L'antivirus et le pare-feu n'ont pas pu l'arrêter, donc c'était au tour de notre héros dinosaure. Dans le jeu, il y aura des défis basés sur les changements que le virus a apportés à l'ordinateur de l'utilisateur.",
+
+        fase1Titulo: "Niveau 1 - CPU",
+        fase1Texto: "Le noyau central de l'ordinateur.",
+        fase2Titulo: "Niveau 2 - Mémoire RAM",
+        fase2Texto: "Circuits, blocs de données et régions instables du système.",
+        fase3Titulo: "Niveau 3 - Alimentation",
+        fase3Texto: "La dernière ligne de défense, où l'énergie échoue et des éclairs incontrôlés frappent le système.",
+        fase4Titulo: "Niveau 4 - Système d'exploitation",
+        fase4Texto: "Le noyau du système, où le virus se cache et tente de corrompre les fichiers.",
+
+        documentacaoTitulo: "Documentation",
+        botaoDownload: "Téléchargez la documentation complète du projet au format PDF",
+        botaoDownloadjogo: "Téléchargez le jeu complet",
+        projetoTitulo: "Téléchargement du projet",
+
+        desenvolvimentoTitulo: "Outils de développement",
+        ferramentasTexto: "Outils utilisés dans le projet :",
+        creditosTitulo: "Équipe de développement",
+        papelWeb: "Développeur WEB",
+        papelDesign: "Conception graphique",
+        papelProgramadora: "Programmeuse",
+        papelProgramador: "Programmeur",
+        papelTutoriais: "Tutoriels et recherche technique",
+
+        linksRapidos: "Liens rapides",
+        inicioPagina: "Haut de la page",
+        rodape1: "Projet développé pour l'activité de fin de 1ère année.",
+        rodape2: "2026 © Tous droits réservés.",
+
+        storyboard: "Storyboard",
+        primeiraFase: "Premier Niveau",
+        segundaFase: "Deuxième Niveau",
+        terceiraFase: "Troisième Niveau",
+        personagem: "Personnage principal (Dinux)",
+        cenarios: "Scénarios du Jeu",
+        cenarioFase1: "Scénario du Premier Niveau",
+        cenarioFase2: "Scénario du Deuxième Niveau",
+        cenarioFase3: "Scénario du Troisième Niveau",
+        cenarioFase4: "Scénario du Quatrième Niveau",
+        codigoTitulo: "Code du Jeu",
+        codigo1: "Extrait de code 1",
+        codigo2: "Extrait de code 2",
+        codigo3: "Extrait de code 3",
+        personagemTitulo: "Personnage",
+        dinuxAnimado: "Dinux animé",
+        inimigo: "Ennemi",
+        inimigoAnimado: "Ennemi animé",
     }
 };
 
 // ==================== TROCA DE IDIOMA ====================
 
-const seletorIdioma = document.getElementById("seletor-idioma");
 const idiomaBotao = document.getElementById("idioma-botao");
 const idiomaLista = document.getElementById("idioma-lista");
 const idiomaAtual = document.getElementById("idioma-atual");
+const idiomaBandeira = document.getElementById("idioma-bandeira");
 
-const siglas = { "pt-BR": "PT", en: "EN", es: "ES" };
+const siglas = {
+    "pt-BR": "PT",
+    en: "EN",
+    es: "ES",
+    fr: "FR"
+};
+
+const bandeiras = {
+    "pt-BR": "https://flagcdn.com/w40/br.png",
+    en: "https://flagcdn.com/w40/gb.png",
+    es: "https://flagcdn.com/w40/es.png",
+    fr: "https://flagcdn.com/w40/fr.png"
+};
 
 function mudarIdioma(idioma) {
+    if (!siglas[idioma]) idioma = "pt-BR";
+
     document.documentElement.lang = idioma;
 
     document.querySelectorAll("[data-i18n]").forEach((elemento) => {
@@ -230,11 +313,14 @@ function mudarIdioma(idioma) {
         if (texto) elemento.textContent = texto;
     });
 
-    // select nativo
-    if (seletorIdioma) seletorIdioma.value = idioma;
-
-    // menu customizado (se existir)
+    // Atualiza a sigla e a bandeira no botão
     if (idiomaAtual) idiomaAtual.textContent = siglas[idioma];
+    if (idiomaBandeira) {
+        idiomaBandeira.src = bandeiras[idioma];
+        idiomaBandeira.alt = siglas[idioma];
+    }
+
+    // Atualiza o item selecionado na lista
     document.querySelectorAll("#idioma-lista li").forEach((item) => {
         item.setAttribute("aria-selected", item.dataset.idioma === idioma);
     });
@@ -242,13 +328,8 @@ function mudarIdioma(idioma) {
     localStorage.setItem("idioma", idioma);
 }
 
-// Aplica o idioma salvo em todas as páginas.
+// Aplica o idioma salvo em todas as páginas
 mudarIdioma(localStorage.getItem("idioma") || "pt-BR");
-
-// --- select nativo ---
-if (seletorIdioma) {
-    seletorIdioma.addEventListener("change", () => mudarIdioma(seletorIdioma.value));
-}
 
 // --- menu customizado ---
 function fecharMenuIdioma() {
